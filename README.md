@@ -87,7 +87,7 @@ Here are more detailed steps with some suggestions:
 - browser extensions to track SAML requests and response
   (they exist both for Chrome and Firefox)
 - the "tools" tab within the ``carbon`` admin interface of the IdP server
-  (https://localhost:9443, admin/admin), that allows the verification of the requests.
+  (https://metagen.yourdomain.com:9443, admin/admin), that allows the verification of the requests.
 
 
 # Execution
