@@ -1,0 +1,6 @@
+# Local development dependencies go here
+-r base.txt
+
+https://github.com/gridworkz/metagen-django/archive/master.zip
+
+

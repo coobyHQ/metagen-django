@@ -1,0 +1,6 @@
+-r base.txt
+
+# python3-saml needs to be manipulated in order to be compliant with METAGEN Identity Providers
+https://github.com/gridworkz/metagen-django/archive/master.zip
+
+

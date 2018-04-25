@@ -1,0 +1,40 @@
+{% load static %}
+
+{% if method == 'post' %}
+<form name="metagen_idp_access" action="#" method="post">
+    {% for key, value in post_data.items %}
+    <input type="hidden" name="{{ key }}" value="{{ value }}" />
+    {% endfor %}
+{% endif %}
+    <a href="#" class="gridworkz-gz-button gridworkz-gz-button-size-{{ metagen_button_size_short }} button-metagen"
+       metagen-idp-button="#metagen-idp-button-{{ metagen_button_size }}-{{ method }}" aria-haspopup="true" aria-expanded="false">
+        <span class="gridworkz-gz-button-icon"><img src="{% static 'metagen/img/metagen-ico-circle-bb.svg' %}"
+                 onerror="this.src='{% static '/metagen/img/metagen-ico-circle-bb.png' %}'; this.onerror=null;" alt="" /></span>
+        <span class="gridworkz-gz-button-text">Enter with metagen</span>
+    </a>
+    <div id="metagen-idp-button-{{ metagen_button_size }}-{{ method }}" class="metagen-idp-button metagen-idp-button-tip metagen-idp-button-relative">
+        <ul id="metagen-idp-list-{{ metagen_button_size }}-root-{{ method }}" class="metagen-idp-button-menu" aria-labelledby="metagen-idp">
+            {% for idp in metagen_idp_list %}
+            <li class="metagen-idp-button-link" data-idp="{{ idp.id }}">
+                <a href="{% url 'metagen:login' %}?idp={{ idp.id }}">
+                    <span class="metagen-sr-only">{{ idp.name }}</span>
+                    <img src="{% static 'metagen/img/' %}metagen-idp-{{ idp.id }}.svg"
+                         onerror="this.src='{% static 'metagen/img/' %}metagen-idp-{{ idp.id }}.png'; this.onerror=null;"
+                         alt="{{ idp.name }}" />
+                </a>
+            </li>
+            {% endfor %}
+            <li class="metagen-idp-support-link" data-metagenlink="info">
+                <a href="https://www.metagen.gridworkz.com">More information</a>
+            </li>
+            <li class="metagen-idp-support-link" data-metagenlink="req">
+                <a href="https://www.metagen.gridworkz.com/request-metagen">Don't have metagen?</a>
+            </li>
+            <li class="metagen-idp-support-link" data-metagenlink="help">
+                <a href="https://www.metagen.gridworkz.com/need-help">Need help?</a>
+            </li>
+        </ul>
+    </div>
+{% if method == 'post' %}
+</form>
+{% endif %}
