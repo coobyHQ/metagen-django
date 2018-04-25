@@ -36,7 +36,7 @@ Here are more detailed steps with some suggestions:
 
 * choose a domain for your Service Provider (i.e. metagen.yourdomain.com)
 
-* generate self-signed certificates for your SP (you can do that here):
+* generate self-signed certificates for your SP (you can do that here:
   https://developers.onelogin.com/saml/online-tools/x509-certs/obtain-self-signed-certs)
 
 * put the content of the generated certificates under ``saml/certs/``
