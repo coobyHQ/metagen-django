@@ -45,7 +45,7 @@ Here are more detailed steps with some suggestions:
 * modify your /etc/hosts file, to redirect both
   ``metagen-testenv-identityserver`` and ``metagen.yourdomain.com`` to your ``localhost``
   ```
-  echo "127.0.0.1 metagen-testenv-identityserver" | sudo tee -a /etc/hosts
+  echo "127.0.0.1 yourdomain.com" | sudo tee -a /etc/hosts
   ```
 
 * start the dockerized service with
@@ -53,16 +53,16 @@ Here are more detailed steps with some suggestions:
   docker-compose up
   ```
 
-* visit https://metagen-testenv-identityserver:8080, go to section
+* visit https://metagen.yourdomain.com:8080, go to section
   **Service Provider**/**Metadata Creation**
 
 * fill in the form:
-    * **Entity ID**: http://metagen.yourdomain.com
+    * **Entity ID**: http://www.yourdomain.com
     * **Certificate**: put the content of the sp.crt, with no headers in the text area
     * **Single Logout Service/Binding**: keep HTTP-POST
-    * **Single Logout Service/Location**: http://metagen.yourdomain.com/?sls
+    * **Single Logout Service/Location**: http://www.yourdomain.com/?sls
     * **Assertion consumer Service/Binding**: HTTP-POST is ok
-    * **Assertion consumer Service/Location**: http://metagen.yourdomain.com/?acs
+    * **Assertion consumer Service/Location**: http://www.yourdomain.com/?acs
     * **Attribute  Consuming Service**:
         * **Name and Description**: `test/test` should be ok
         * choose all fields you want returned from the IdP to your
